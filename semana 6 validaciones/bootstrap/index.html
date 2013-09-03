@@ -1,0 +1,81 @@
+<DOCTYPE HTML>
+<HTML lang="Es">
+    <HEAD>
+		<meta charset="UTF-8">
+		<meta name "viewport" content ="width=divece-width, initial-scale=1.0">
+        <TITLE> clase # 6</TITLE>
+		<link rel="stylesheet" href="css/bootstrap.css">
+		<link rel = "stylesheet" href= "css/bootstrap-responsive.css">
+        
+    </HEAD>
+
+    <BODY>
+	<div class="container">
+			
+		<div class="row">
+			<div class = "hero-unit">
+			<center><h1>Pr&aacute;ctica # 6</h1> <h3>mi&eacute;rcoles 28 de agosto 2013 </h3></center>
+			</div>
+		</div>
+		
+			<div class = "row">
+					<form class = "form-horizontal" name="tuform">
+						<fieldset>
+						<legend> Contactame </legend>
+							<div class = "control-group">
+								<label class="control-label" for = "nombre">Nombre</label>
+								<div class = "controls">
+									<input type = "text" id= "nombre" required pattern = "^[a-zA-z][a-zA-z09-_\.]{1,30}$" name="nombre" oninput="verificar()">*
+									<span id='acotacion'>*</span>
+								</div>
+							</div>
+							<div class = "control-group">
+								<label class="control-label" for = "email">Email</label>
+								<div class = "controls">
+									<input type = "email" id= "email" placeholder="nombre@gmail.com" required="required">*
+								</div>
+							</div>
+							<div class = "control-group">
+								<label class="control-label"> P&aacute;gina web</label>
+								<div class = "controls">
+									<input type = "url" id= "url" required="required">*
+								</div>
+							</div>
+							<div class = "form-actions">
+								<input type="submit" class="btn btn-primary" value="Enviar">
+								<input type="reset" class="btn" value="Cancelar">
+							</div>
+						</fieldset>
+					</form>
+					<p> * Campos obligatorios </p>
+			</div>
+		
+	
+				<div class = "bottom-nav">
+					<div class="nav">
+						<ul class = "nav nav-tabs">
+							<li class="nav-bottom"><a href="#">Inicio</a></li>
+							<li class="active"><a href="#">Frameworks</a></li>
+							<li class="nav-bottom"><a href="#">Patrones</a></li>
+						</ul>
+					</div>
+				</div>
+		</div>		
+	
+		<script src ="js/jquery-1.10.2.min"></script>
+		<script>
+			window.addEventListener('load', init);
+			function init(){
+				var es_valido = document.tuform.nombre.checkValidity();
+				if(es_valido) console.log('¡ Bien !');
+				else console.log('Error ! >.<! ');
+			}
+			
+			function verificar(){
+				var es_valido = document.tuform.nombre.checkValidity();
+				if(es_valido) $('#acotacion').text(' ¡ bien !');
+				else $('#acotacion').text('Error ! >.<! ');
+			}
+		</script>
+    </BODY>
+</HTML>
